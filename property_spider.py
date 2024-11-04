@@ -24,14 +24,15 @@ class PropertySpider(scrapy.Spider):
             yield scrapy.Request(urljoin(base_url, link), callback = self.parse_detail_page)
             
         # Find the "Next" button link and follow it if it exists
-        # next_page = response.css('a.next-link::attr(href)').get()
+        next_page = response.css('a[aria-label="Next page"]::attr(href)').get()
+        if next_page:
+            yield response.follow(next_page, self.parse)
         # Generate a list of integers from 2 to 206
-        page_numbers = list(range(2, 207))
-        
-        # Format the page numbers into the specified URL to follow
-        next_page = [f"https://www.realtor.com/realestateandhomes-search/Los-Angeles_CA/pg-{page_number}" for page_number in page_numbers]
-
-        for url in next_page:
-            # If the next page link is found, follow it and call parse() again
-            yield response.follow(url, self.parse)
+#        page_numbers = list(range(2, 207))
+#        # Format the page numbers into the specified URL to follow
+#        next_page = [f"https://www.realtor.com/realestateandhomes-search/Los-Angeles_CA/pg-{page_number}" for page_number in page_numbers]
+#
+#        for url in next_page:
+#            # If the next page link is found, follow it and call parse() again
+#            yield response.follow(url, self.parse)
 
