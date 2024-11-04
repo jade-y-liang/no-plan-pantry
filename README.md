@@ -30,5 +30,6 @@ response.css('div[aria-label="pagination"] a[rel="next"]::attr(href)').get()
 response.css('div[aria-label="pagination"] a.next-link::attr(href)').get()
 response.xpath('//div[@aria-label="pagination"]//a[contains(@class, "next-link")]/@href').get()
 ```
+I gave up in follow the "Next" buttom, so I just manually build the url on spider.
 
 
