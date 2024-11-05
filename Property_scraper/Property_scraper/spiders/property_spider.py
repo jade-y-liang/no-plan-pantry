@@ -11,7 +11,7 @@ class PropertySpider(scrapy.Spider):
         """
         
         # Extract all property links
-        property_links = response.css("div[data-testid='card-media'] a::attr(href)").getall()
+        property_links = response.css('div[id^="property_id_"] a::attr(href)').getall()
 
         # Yield each link as an item
         for link in property_links:
@@ -21,7 +21,7 @@ class PropertySpider(scrapy.Spider):
             }
             
         # Find the "Next" button link and follow it if it exists
-        next_page = response.css("a[aria-label="Next page"]::attr(href)").get()
+        next_page = response.css('a.next-link::attr(href)').get()
         if next_page:
             yield response.follow(next_page, self.parse)
 
