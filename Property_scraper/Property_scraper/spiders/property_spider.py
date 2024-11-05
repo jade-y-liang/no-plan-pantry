@@ -9,11 +9,12 @@ class PropertySpider(scrapy.Spider):
         """
         Parse the initial search result page and return each property link
         """
+        
         # Extract all property links
-        property_links = response.css('div[id^="property_id_"] a::attr(href)').getall()
+        property_links = response.css("div[data-testid='card-media'] a::attr(href)").getall()
 
         # Yield each link as an item
         for link in property_links:
             yield {
                 'property_link': response.urljoin(link)
-            }       
+            }
