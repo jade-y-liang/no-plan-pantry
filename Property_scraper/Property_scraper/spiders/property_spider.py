@@ -17,4 +17,12 @@ class PropertySpider(scrapy.Spider):
         for link in property_links:
             yield {
                 'property_link': response.urljoin(link)
+            #scrapy.Request(urljoin(base_url, link), callback = self.parse_detail_page)
             }
+            
+        # Find the "Next" button link and follow it if it exists
+        next_page = response.css("a[aria-label="Next page"]::attr(href)").get()
+        if next_page:
+            yield response.follow(next_page, self.parse)
+
+    # def parse_detail_page(self, response):
