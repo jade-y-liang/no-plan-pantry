@@ -29,5 +29,5 @@ After changing directory to Property_scraper, type the following on the terminal
 ```bash
 scrapy crawl property_spider -o results.csv
 ```
-Note that the parse() method only extracted 9 urls from this page. It's unclear why this is the case. There are more listings on the first page that should've been extracted. 
+Note that the parse() method only extracted 8 urls from this page. It's unclear why this is the case. There are more listings on the first page that should've been extracted. 
 
