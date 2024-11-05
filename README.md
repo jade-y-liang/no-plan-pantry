@@ -1,11 +1,3 @@
-# Redfin Housing Data Analysis
-
-## Setting Up
-* Here is the [link](https://www.unitedstateszipcodes.org/zip-code-database/#) to directly access a csv file containing all U.S. zip codes.
-  * We used the free version. The csv file we used is also available in this repository. 
-* [Python wrapper](https://github.com/reteps/redfin) created by another user to access data on a Redfin listing without screen scraping. 
-
-<<<<<<< HEAD
 # Realtor Web Scrapping
 ## Setting Up
 ```bash
@@ -32,4 +24,9 @@ response.xpath('//div[@aria-label="pagination"]//a[contains(@class, "next-link")
 ```
 I gave up in follow the "Next" buttom, so I just manually build the url on spider.
 
+## To Scrape Links on Property Page
+After changing directory to Property_scraper, type the following on the terminal window to download links to each property and save the results as "results.csv". This will give you the links to each property listed on page one of https://www.realtor.com/realestateandhomes-search/90024. 
+```bash
+scrapy crawl property_spider -o results.csv
+```
 
