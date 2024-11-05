@@ -1,4 +1,4 @@
-# Realtor Web Scrapping
+# Realtor Web Scraping
 ## Setting Up
 ```bash
 conda activate PIC16B-24F
