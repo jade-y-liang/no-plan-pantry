@@ -29,5 +29,4 @@ After changing directory to Property_scraper, type the following on the terminal
 ```bash
 scrapy crawl property_spider -o results.csv
 ```
-Note that the parse() method only extracted 8 urls from this page. It's unclear why this is the case. There are more listings on the first page that should've been extracted. 
-
+Note that the parse() method only extracted 8 urls from this page. There are more listings on the first page that should've been extracted. This may be due to how realtor.com displays listings dynamically using JavaScript, which prevents us from scraping all listings from the initial HTML source. To fix this issue, we may need to use tools such as Selenium or Splash from Scrapy. 
