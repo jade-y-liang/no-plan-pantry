@@ -2,8 +2,8 @@
 ## Setting Up
 ```bash
 conda activate PIC16B-24F
-scrapy startproject Recipy_scraper
-cd Recipy_scraper
+scrapy startproject Recipe_scraper
+cd Recipe_scraper
 ```
 ## Experiments
 ```bash
