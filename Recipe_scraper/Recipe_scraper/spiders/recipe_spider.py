@@ -21,7 +21,7 @@ class RecipeSpider(scrapy.Spider):
     
     
     def parse_detail_page(self, response):
-        """Extract recipe name, prep time, cook time, total time, ingredients, and 
+        """Extract recipe name, prep time, cook time, total time, ingredients, directions, and 
             nutrition facts (per serving) from each recipe page
         """
 
