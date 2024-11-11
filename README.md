@@ -2,27 +2,13 @@
 ## Setting Up
 ```bash
 conda activate PIC16B-24F
-scrapy startproject Property_scraper
-cd Property_scraper
+scrapy startproject Recipy_scraper
+cd Recipy_scraper
 ```
 ## Experiments
 ```bash
-scrapy shell https://www.realtor.com/realestateandhomes-search/Los-Angeles_CA
+scrapy shell https://www.allrecipes.com/recipes-a-z-6735880
 ```
-The following CSS selector that works:
-```bash
-response.css('div[id^="property_id_"] a::attr(href)').getall()
-```
-I documented this in the "property_spider.py"
-The following CSS selector that meant to press the next buttom does not work,
-I tried the following:
-```bash
-response.css('a.next-link::attr(href)').get()
-response.css('div[aria-label="pagination"] a[rel="next"]::attr(href)').get()
-response.css('div[aria-label="pagination"] a.next-link::attr(href)').get()
-response.xpath('//div[@aria-label="pagination"]//a[contains(@class, "next-link")]/@href').get()
-```
-I gave up in follow the "Next" buttom, so I just manually build the url on spider.
 
 ## To Scrape Links on Property Page
 After changing directory to Property_scraper, type the following on the terminal window to download links to each property and save the results as "results.csv". This will give you the links to each property listed on page one of https://www.realtor.com/realestateandhomes-search/90024.  
