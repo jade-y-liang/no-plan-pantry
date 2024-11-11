@@ -5,9 +5,9 @@ conda activate PIC16B-24F
 scrapy startproject Recipe_scraper
 cd Recipe_scraper
 ```
-## Experiments
+## Output Data
 ```bash
-scrapy shell https://www.allrecipes.com/recipes-a-z-6735880
+scrapy crawl recipe_spider -o results.csv 
 ```
 
 ## To Scrape Links on Property Page
