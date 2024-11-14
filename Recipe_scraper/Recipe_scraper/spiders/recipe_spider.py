@@ -17,7 +17,17 @@ class RecipeSpider(scrapy.Spider):
             yield { 'category_link': link}
             #scrapy.Request(link, callback = self.parse_menu_page)}
             
-    #def parse_menu_page(self, response):
+    def parse_menu_page(self, response):
+        """
+        Parse each category page and follow each recipe link.
+        """
+        
+        # Extract each recipe link on the category page
+        recipe_links = response.css('a:has(span.card__title-text)::attr(href)').getall()
+
+        # Follow each recipe link to get recipe details
+        for recipe_link in recipe_links:
+            yield scrapy.Request(url=recipe_link, callback=self.parse_detail_page)
     
     
     def parse_detail_page(self, response):
