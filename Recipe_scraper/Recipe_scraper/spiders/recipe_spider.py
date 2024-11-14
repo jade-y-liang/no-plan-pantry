@@ -23,7 +23,9 @@ class RecipeSpider(scrapy.Spider):
         """
         
         # Extract each recipe link on the category page
-        recipe_links = response.css('a:has(span.card__title-text)::attr(href)').getall()
+        three_recommended_recipes = response.css("div[id='mntl-three-post__inner_1-0'] a::attr(href)").getall()
+        all_recipes = response.css("div[id='mntl-taxonomysc-article-list-group_1-0'] a::attr(href)").getall()
+        recipe_link = three_recommended_recipes + all_recipes
 
         # Follow each recipe link to get recipe details
         for recipe_link in recipe_links:
