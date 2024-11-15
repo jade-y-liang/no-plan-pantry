@@ -12,33 +12,34 @@ BOT_NAME = "Recipe_scraper"
 SPIDER_MODULES = ["Recipe_scraper.spiders"]
 NEWSPIDER_MODULE = "Recipe_scraper.spiders"
 
-
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+DOWNLOAD_DELAY = 0  # setting max speed
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 
-# See also autothrottle settings and docs
-DOWNLOAD_DELAY = 3
-# Reduce the number of concurrent requests made by Scrapy
-CONCURRENT_REQUESTS = 1
+# # See also autothrottle settings and docs
+# DOWNLOAD_DELAY = 3
+# # Reduce the number of concurrent requests made by Scrapy
+# CONCURRENT_REQUESTS = 1
 
 # Configure retry middleware
 RETRY_TIMES = 2
 RETRY_HTTP_CODES = [429, 500, 502, 503, 504, 408]
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = True
+COOKIES_ENABLED = False # can improve performance
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -78,7 +79,7 @@ ROBOTSTXT_OBEY = True
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True  # allows scrapy to increase delay if detects server latency
 # The initial download delay
 #AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
