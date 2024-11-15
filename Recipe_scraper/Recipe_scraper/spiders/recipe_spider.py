@@ -92,7 +92,7 @@ class RecipeSpider(scrapy.Spider):
         for nutrient, value in nutrients.items():
             nutrition_data[nutrient] = value.strip() if value else None
 
-        calories = response.css("th.mm-recipes-nutrition-facts-label__table-head-subtitle span::text").get()
+        calories = response.css("tr.mm-recipes-nutrition-facts-label__calories th.mm-recipes-nutrition-facts-label__table-head-subtitle span + span::text").get()
         total_fat = nutrition_data.get("Total Fat")
         saturated_fat = nutrition_data.get("Saturated Fat")
         sodium_mg = nutrition_data.get("Sodium")
