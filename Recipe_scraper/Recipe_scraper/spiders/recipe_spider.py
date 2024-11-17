@@ -13,13 +13,15 @@ class RecipeSpider(scrapy.Spider):
         categories = response.css('div.mntl-alphabetical-list__group a')
         for category in categories:
             link = category.css('::attr(href)').get()
-            category_name = category.css('::text').get()  # Extract category name
+            # Extract category name
+            category_name = category.css('::text').get()
             
             # Pass category_name to the next request using meta
             yield scrapy.Request(
                 url=link, 
-                callback=self.parse_menu_page, 
-                meta={'category_name': category_name} # to later output category name for each recipe
+                callback=self.parse_menu_page,
+                # Output category name for each recipe
+                meta={'category_name': category_name}
             )
             
     def parse_menu_page(self, response):
