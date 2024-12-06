@@ -3,6 +3,8 @@ import pandas as pd
 
 def clean_main_ingredients(ingredient_string):
     """ Converts main_ingredients string into a list of ingredients"""
+    if ingredient_string is None:
+        return []
     return ingredient_string.split(", ")
 
 def clean_ingredients(str):
