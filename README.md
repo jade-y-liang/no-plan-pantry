@@ -8,8 +8,12 @@ Overall, the No-Plan Pantry project combines data science, natural language proc
 
 ## How to Use the Web App:
 
-First, please clone this resposity to your computer. Then run the following code on your terminal.
+First, please clone this resposity to your computer. You can do so by running the following code on your terminal.
+```
+git clone https://github.com/jade-y-liang/no-plan-pantry.git
+```
 
+Then run the following code on your terminal.
 ```
 cd no-plan-pantry
 python recipe_query/webapp.py
