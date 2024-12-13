@@ -16,7 +16,7 @@ git clone https://github.com/jade-y-liang/no-plan-pantry.git
 Then run the following code on your terminal.
 ```
 cd no-plan-pantry
-python recipe_query/webapp.py
+python Web_Application/webapp.py
 ```
 
 The terminal window will then display a message like "Dash is running on http://". You can simply copy and paste the link shown on your terminal window to visit the web page. After you're done with the web app, simply click ctrl+C on your terminal window to exit the web app. 
