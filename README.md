@@ -1,3 +1,18 @@
 # No-Plan Pantry
-### Presentation 2:
-We gave updates on our new project, which is an algorithm to generate easy-to-follow recipes based on users' leftover ingredients in their fridge. We created a dash app that allows users to input ingredients, as well as a callback function to take in user input for ingredients (can be seen in webapp.ipynb). We used scrapy to scrape recipes from allrecipes.com and implemented a query function get recipes based on certain criteria (ingredients, calorie range). Create a data cleaning notebook for data pre-processing for each column, using NLP to extract each recipe’s main ingredients and experiment with a Transformer model to predict the NaN value of cooking time.
+## Overview:
+Our project, “No-Plan Pantry”, aims to minimize food waste and inspire creativity in the kitchen by developing a web-application which generates recipes based on user-inputted ingredients. Using web scraping, recipes are collected from allrecipes.com and cleaned to ensure data quality. Advanced machine learning models, such as GPT-2 and BERT, are further employed to generate AI-based recipes and predict cooking times using textual recipe instructions. The application integrates these features with a user-friendly interface developed using Dash.
+
+Data cleaning plays a critical role in standardizing recipe information, such as unifying time units, extracting key ingredients, and estimating missing cooking times. This step ensures the dataset is well-structured for machine learning models, enabling accurate recipe recommendations and cooking time predictions. The app’s interactivity allows users to select ingredients, set time or calorie preferences, and view both AI-generated and sourced recipes in an organized layout.
+
+Overall, the No-Plan Pantry project combines data science, natural language processing, and intuitive design to create an innovative tool that empowers users to cook creatively while reducing food waste.
+
+## How to Use the Web App:
+
+First, please clone this resposity to your computer. Then run the following code on your terminal.
+
+```
+cd no-plan-pantry
+python recipe_query/webapp.py
+```
+
+The terminal window will then display a message like "Dash is running on http://". You can simply copy and paste the link shown on your terminal window to visit the web page. After you're done with the web app, simply click ctrl+C on your terminal window to exit the web app. 
