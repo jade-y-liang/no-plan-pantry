@@ -13,7 +13,7 @@ First, please clone this resposity to your computer. You can do so by running th
 git clone https://github.com/jade-y-liang/no-plan-pantry.git
 ```
 
-_(Note: This method does not automatically download the "model.safetensors" file located in "Web_Application/fine_tuned_recipe_model" to your computer.)_
+_(Note: This method does **not** correctly download the "model.safetensors" file located in "Web_Application/fine_tuned_recipe_model" to your computer.)_
 
 After cloning this repository, please navigate to the "fine_tuned_recipe_model" folder inside the "Web_Application" directory on this page.
 
